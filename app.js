@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3001;
+const queries = require('./queries');
 
 //INDEX ROUTE
 app.get("/", function(req, res) {
-    res.send("What's good my fam.");
+    queries.getAll().then(response => res.send(response));
 });
 
 //ERROR ROUTE
