@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 //INDEX ROUTE
 app.get("/", function(req, res) {
@@ -17,7 +17,7 @@ app.get("*", function(req, res) {
 //HOSTING
 
 app.listen(port, function() {
-    console.log("Serving on port 3000.");
+    console.log("Serving on port 3001.");
 });
 
 console.log("exit code 0");
