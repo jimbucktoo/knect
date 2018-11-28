@@ -4,11 +4,25 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3001;
 const queries = require('./queries');
 
+app.use(bodyParser.json())
+
+//FAVICON ROUTE
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 //INDEX ROUTE
 app.get("/", function(req, res) {
     queries.getAll().then(response => res.send(response));
 });
 
+//SHOW ROUTE
+app.get("/:id", function(req, res) {
+    queries.getById(req.params.id).then(response => res.send(response));
+});
+
+//POST ROUTE
+app.post('/', (request, response) => {
+    queries.createStudent(request.body).then(student => response.send(student));
+});
 //ERROR ROUTE
 
 app.get("*", function(req, res) {
