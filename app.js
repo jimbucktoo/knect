@@ -7,7 +7,7 @@ const queries = require('./queries');
 app.use(bodyParser.json())
 
 //FAVICON ROUTE
-app.get('/favicon.ico', (req, res) => res.status(204));
+app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
 //INDEX ROUTE
 app.get("/", function(req, res) {
@@ -20,9 +20,15 @@ app.get("/:id", function(req, res) {
 });
 
 //POST ROUTE
-app.post('/', (request, response) => {
-    queries.createStudent(request.body).then(student => response.send(student));
+app.post('/', (req, res) => {
+    queries.createStudent(req.body).then(student => res.send(student));
 });
+
+//DELETE ROUTE
+app.delete('/:id', (req, res) => {
+    queries.deleteStudent(req.params.id).then(res.sendStatus(204));
+});
+
 //ERROR ROUTE
 
 app.get("*", function(req, res) {
