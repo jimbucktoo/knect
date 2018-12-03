@@ -23,13 +23,13 @@ What things you need to install the software and how to install them
 
 A step by step series of examples that tell you how to get a development env running
 
-1. Install Dependencies:
+1. Install dependencies:
 
 ```
 npm install
 ```
 
-2. Initialize Server
+2. Initialize server
 
 ```
 npm start
@@ -64,7 +64,7 @@ Steps to take for project deployment on a live server:
 heroku create dataBaseName
 ```
 
-2. Install Postgresql Heroku Add-on:
+2. Install Postgresql Heroku add-on:
 
 ```
 heroku addons:create heroku-postgresql:hobby-dev
