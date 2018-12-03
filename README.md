@@ -2,7 +2,7 @@
 
 knect is a Knex application created in Javascript to help me learn the fundamentals of using the Knex library with other back end technologies.
 
-##Links
+## Links
 
 * [Heroku Server](http://knect.herokuapp.com/) - http://knect.herokuapp.com/
 * [Back-End Repository](https://github.com/jimbucktoo/knect) - https://github.com/jimbucktoo/knect/
