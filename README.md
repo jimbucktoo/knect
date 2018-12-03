@@ -41,6 +41,19 @@ npm start
 http://localhost:3001/
 ```
 
+4. Migrate to the latest deployment:
+
+```
+knex migrate:latest
+```
+
+5. Run the seeds:
+
+```
+knex seed:run
+```
+
+
 ## Deployment
 
 Steps to take for project deployment on a live server:
