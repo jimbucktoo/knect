@@ -29,7 +29,7 @@ A step by step series of examples that tell you how to get a development env run
 npm install
 ```
 
-2. Initialize server
+2. Initialize server:
 
 ```
 npm start
