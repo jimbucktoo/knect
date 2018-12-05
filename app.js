@@ -5,6 +5,7 @@ const port = process.env.PORT || 3001
 const queries = require('./queries')
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 //FAVICON ROUTE
 app.get('/favicon.ico', (req, res) => res.sendStatus(204))
@@ -25,8 +26,8 @@ app.post('/', (req, res) => {
 })
 
 //UPDATE ROUTE
-app.put('/:id', (request, response) => {
-    queries.updateStudent(request.params.id, request.body).then(data => response.json(data[0]))
+app.put('/:id', (req, res) => {
+    queries.updateStudent(req.params.id, req.body).then(data => res.json(data[0]))
 })
 
 //DELETE ROUTE
